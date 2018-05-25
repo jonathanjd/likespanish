@@ -65651,6 +65651,197 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -65713,6 +65904,44 @@ var render = function() {
                 [
                   _c(
                     "v-list-tile-action",
+                    [_c("v-icon", [_vm._v("info\n          ")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [_c("v-list-tile-title", [_vm._v("About Us")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-tile",
+                { on: { click: function($event) {} } },
+                [
+                  _c(
+                    "v-list-tile-action",
+                    [_c("v-icon", [_vm._v("shopping_cart\n          ")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [_c("v-list-tile-title", [_vm._v("Plans")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-tile",
+                { on: { click: function($event) {} } },
+                [
+                  _c(
+                    "v-list-tile-action",
                     [_c("v-icon", [_vm._v("contact_mail")])],
                     1
                   ),
@@ -65720,6 +65949,44 @@ var render = function() {
                   _c(
                     "v-list-tile-content",
                     [_c("v-list-tile-title", [_vm._v("Contact")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-tile",
+                { on: { click: function($event) {} } },
+                [
+                  _c(
+                    "v-list-tile-action",
+                    [_c("v-icon", [_vm._v("person_add")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [_c("v-list-tile-title", [_vm._v("Register")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-tile",
+                { on: { click: function($event) {} } },
+                [
+                  _c(
+                    "v-list-tile-action",
+                    [_c("v-icon", [_vm._v("person")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-tile-content",
+                    [_c("v-list-tile-title", [_vm._v("Login")])],
                     1
                   )
                 ],
@@ -65750,18 +66017,568 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c(
-        "v-content",
-        [_c("v-container", { attrs: { fluid: "", "fill-height": "" } })],
-        1
-      ),
+      _c("v-content", [
+        _c(
+          "section",
+          [
+            _c(
+              "v-jumbotron",
+              { attrs: { dark: "", src: "/img/like-spanish.jpg" } },
+              [
+                _c(
+                  "v-container",
+                  { attrs: { "fill-height": "" } },
+                  [
+                    _c(
+                      "v-layout",
+                      { attrs: { "align-center": "" } },
+                      [
+                        _c(
+                          "v-flex",
+                          [
+                            _c("h3", { staticClass: "display-3" }, [
+                              _vm._v("Welcome to the site")
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "subheading" }, [
+                              _vm._v(
+                                "Lorem ipsum dolor sit amet, pri veniam forensibus id. Vis maluisset molestiae id, ad semper lobortis cum.\n                At impetus detraxit incorrupte usu, repudiare assueverit ex eum, ne nam essent vocent admodum."
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("v-divider", { staticClass: "my-3" }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "title mb-3" }, [
+                              _vm._v("Check out our newest features!")
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                staticClass: "mx-0",
+                                attrs: { large: "", color: "success" }
+                              },
+                              [_vm._v("Free Trial")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-btn",
+                              {
+                                staticClass: "mx-0",
+                                attrs: { large: "", color: "primary" }
+                              },
+                              [_vm._v("Need More Info?")]
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "section",
+          [
+            _c(
+              "v-container",
+              { attrs: { "grid-list-xs": "" } },
+              [
+                _c(
+                  "v-layout",
+                  { attrs: { row: "", wrap: "" } },
+                  [
+                    _c("v-flex", { staticClass: "my-3", attrs: { xs12: "" } }, [
+                      _c("div", { staticClass: "text-xs-center" }, [
+                        _c(
+                          "p",
+                          [
+                            _c("v-icon", { attrs: { "x-large": true } }, [
+                              _vm._v("school")
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("h2", { staticClass: "headline" }, [
+                          _vm._v(
+                            "Achieve fluency with the #1 Online Spanish School"
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "subheading" }, [
+                          _vm._v(
+                            "\n                Cras facilisis mi vitae nunc\n              "
+                          )
+                        ])
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-layout",
+                  { attrs: { column: "", wrap: "", "align-center": "" } },
+                  [
+                    _c(
+                      "v-flex",
+                      { attrs: { xs12: "" } },
+                      [
+                        _c(
+                          "v-container",
+                          { attrs: { "grid-list-xl": "" } },
+                          [
+                            _c(
+                              "v-layout",
+                              {
+                                attrs: { row: "", wrap: "", "align-center": "" }
+                              },
+                              [
+                                _c(
+                                  "v-flex",
+                                  { attrs: { xs12: "", md4: "" } },
+                                  [
+                                    _c(
+                                      "v-card",
+                                      {
+                                        staticClass: "elevation-0 transparent"
+                                      },
+                                      [
+                                        _c(
+                                          "v-card-text",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _c(
+                                              "v-icon",
+                                              {
+                                                staticClass:
+                                                  "blue--text text--lighten-2",
+                                                attrs: { "x-large": "" }
+                                              },
+                                              [_vm._v("mood")]
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-card-title",
+                                          {
+                                            staticClass:
+                                              "layout justify-center",
+                                            attrs: { "primary-title": "" }
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "headline text-xs-center"
+                                              },
+                                              [_vm._v("Material Design")]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("v-card-text", [
+                                          _vm._v(
+                                            "\n                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus\n                      et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus\n                      bibendum tincidunt. Suspendisse potenti.\n                    "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-flex",
+                                  { attrs: { xs12: "", md4: "" } },
+                                  [
+                                    _c(
+                                      "v-card",
+                                      {
+                                        staticClass: "elevation-0 transparent"
+                                      },
+                                      [
+                                        _c(
+                                          "v-card-text",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _c(
+                                              "v-icon",
+                                              {
+                                                staticClass:
+                                                  "blue--text text--lighten-2",
+                                                attrs: { "x-large": "" }
+                                              },
+                                              [_vm._v("star")]
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-card-title",
+                                          {
+                                            staticClass:
+                                              "layout justify-center",
+                                            attrs: { "primary-title": "" }
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              { staticClass: "headline" },
+                                              [_vm._v("Fast development")]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("v-card-text", [
+                                          _vm._v(
+                                            "\n                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus\n                      et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus\n                      bibendum tincidunt. Suspendisse potenti.\n                    "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-flex",
+                                  { attrs: { xs12: "", md4: "" } },
+                                  [
+                                    _c(
+                                      "v-card",
+                                      {
+                                        staticClass: "elevation-0 transparent"
+                                      },
+                                      [
+                                        _c(
+                                          "v-card-text",
+                                          { staticClass: "text-xs-center" },
+                                          [
+                                            _c(
+                                              "v-icon",
+                                              {
+                                                staticClass:
+                                                  "blue--text text--lighten-2",
+                                                attrs: { "x-large": "" }
+                                              },
+                                              [_vm._v("book")]
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-card-title",
+                                          {
+                                            staticClass:
+                                              "layout justify-center",
+                                            attrs: { "primary-title": "" }
+                                          },
+                                          [
+                                            _c(
+                                              "div",
+                                              {
+                                                staticClass:
+                                                  "headline text-xs-center"
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "Completely Open Sourced"
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("v-card-text", [
+                                          _vm._v(
+                                            "\n                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus\n                      et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus\n                      bibendum tincidunt. Suspendisse potenti.\n                    "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "section",
+          [
+            _c(
+              "v-parallax",
+              { attrs: { src: "/img/call-action.jpeg", height: "380" } },
+              [
+                _c(
+                  "v-layout",
+                  {
+                    attrs: {
+                      column: "",
+                      "align-center": "",
+                      "justify-center": ""
+                    }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "headline white--text mb-3 text-xs-center"
+                      },
+                      [_vm._v("Web development has never been easier")]
+                    ),
+                    _vm._v(" "),
+                    _c("em", [_vm._v("Kick-start your application today")]),
+                    _vm._v(" "),
+                    _c(
+                      "v-btn",
+                      {
+                        staticClass: "blue lighten-2 mt-5",
+                        attrs: { dark: "", large: "", href: "/pre-made-themes" }
+                      },
+                      [_vm._v("\n            Get Started\n          ")]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "section",
+          [
+            _c(
+              "v-container",
+              { attrs: { "grid-list-xl": "" } },
+              [
+                _c(
+                  "v-layout",
+                  {
+                    staticClass: "my-5",
+                    attrs: { row: "", wrap: "", "justify-center": "" }
+                  },
+                  [
+                    _c(
+                      "v-flex",
+                      { attrs: { xs12: "", sm4: "" } },
+                      [
+                        _c(
+                          "v-card",
+                          { staticClass: "elevation-0 transparent" },
+                          [
+                            _c(
+                              "v-card-title",
+                              {
+                                staticClass: "layout justify-center",
+                                attrs: { "primary-title": "" }
+                              },
+                              [
+                                _c("div", { staticClass: "headline" }, [
+                                  _vm._v("Company info")
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("v-card-text", [
+                              _vm._v(
+                                "\n                Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. Pellentesque habitant morbi tristique senectus\n                et netus et malesuada fames ac turpis egestas. Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum\n                tincidunt. Suspendisse potenti.\n              "
+                              )
+                            ])
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-flex",
+                      { attrs: { xs12: "", sm4: "", "offset-sm1": "" } },
+                      [
+                        _c(
+                          "v-card",
+                          { staticClass: "elevation-0 transparent" },
+                          [
+                            _c(
+                              "v-card-title",
+                              {
+                                staticClass: "layout justify-center",
+                                attrs: { "primary-title": "" }
+                              },
+                              [
+                                _c("div", { staticClass: "headline" }, [
+                                  _vm._v("Contact us")
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("v-card-text", [
+                              _vm._v(
+                                "\n                Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "v-list",
+                              { staticClass: "transparent" },
+                              [
+                                _c(
+                                  "v-list-tile",
+                                  [
+                                    _c(
+                                      "v-list-tile-action",
+                                      [
+                                        _c(
+                                          "v-icon",
+                                          {
+                                            staticClass:
+                                              "blue--text text--lighten-2"
+                                          },
+                                          [_vm._v("phone")]
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-tile-content",
+                                      [
+                                        _c("v-list-tile-title", [
+                                          _vm._v("777-867-5309")
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile",
+                                  [
+                                    _c(
+                                      "v-list-tile-action",
+                                      [
+                                        _c(
+                                          "v-icon",
+                                          {
+                                            staticClass:
+                                              "blue--text text--lighten-2"
+                                          },
+                                          [_vm._v("place")]
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-tile-content",
+                                      [
+                                        _c("v-list-tile-title", [
+                                          _vm._v("Chicago, US")
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-tile",
+                                  [
+                                    _c(
+                                      "v-list-tile-action",
+                                      [
+                                        _c(
+                                          "v-icon",
+                                          {
+                                            staticClass:
+                                              "blue--text text--lighten-2"
+                                          },
+                                          [_vm._v("email")]
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-tile-content",
+                                      [
+                                        _c("v-list-tile-title", [
+                                          _vm._v("john@vuetifyjs.com")
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c(
         "v-footer",
         { staticClass: "text-xs-center", attrs: { dark: "" } },
         [
           _c("v-container", { attrs: { "grid-list-xs": "" } }, [
-            _c("span", { staticClass: "white--text" }, [_vm._v("© 2018")])
+            _c("span", { staticClass: "white--text" }, [
+              _vm._v("LikeSpanish © 2018")
+            ])
           ])
         ],
         1
