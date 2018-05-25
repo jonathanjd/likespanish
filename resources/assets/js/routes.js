@@ -1,6 +1,32 @@
-import Home from './components/Home';
+import Home from './components/home/Home';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
+import About from './components/about/About';
+import Plans from './components/plan/Plans';
 
 export const routes = [{
-  path: '/',
-  component: Home
-}]
+    path: '/',
+    component: Home,
+    name: 'home'
+  },
+  {
+    path: '/login',
+    component: Login,
+    name: 'login'
+  },
+  {
+    path: '/register',
+    component: Register,
+    name: 'register'
+  },
+  {
+    path: '/plans',
+    component: Plans,
+    name: 'plans'
+  },
+  {
+    path: '/about',
+    component: About,
+    name: 'about'
+  },
+]

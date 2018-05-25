@@ -1,88 +1,10 @@
 <template>
-  <v-app id="inspire">
-    <v-navigation-drawer fixed v-model="drawer" app>
-      <v-list dense>
+  <v-app>
 
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>info
-            </v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>About Us</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>shopping_cart
-            </v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Plans</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>person_add</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Register</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>person</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Login</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar dark dark fixed app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>LikeSpanish</v-toolbar-title>
-    </v-toolbar>
+    <app-toolbar></app-toolbar>
     <v-content>
 
-      <section>
-        <v-jumbotron dark src="/img/like-spanish.jpg">
-          <v-container fill-height>
-            <v-layout align-center>
-              <v-flex>
-                <h3 class="display-3">Welcome to the site</h3>
-                <span class="subheading">Lorem ipsum dolor sit amet, pri veniam forensibus id. Vis maluisset molestiae id, ad semper lobortis cum.
-                  At impetus detraxit incorrupte usu, repudiare assueverit ex eum, ne nam essent vocent admodum.</span>
-                <v-divider class="my-3"></v-divider>
-                <div class="title mb-3">Check out our newest features!</div>
-                <v-btn large color="success" class="mx-0">Free Trial</v-btn>
-                <v-btn large color="primary" class="mx-0">Need More Info?</v-btn>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-jumbotron>
-      </section>
+      <app-header></app-header>
 
       <section>
         <v-container grid-list-xs>
@@ -223,21 +145,22 @@
       </section>
 
     </v-content>
-    <v-footer dark class="text-xs-center">
-      <v-container grid-list-xs>
-        <span class="white--text">LikeSpanish &copy; 2018</span>
-      </v-container>
-    </v-footer>
+    <app-footer></app-footer>
   </v-app>
 </template>
 
 <script>
+import Toolbar from '../include/Toolbar';
+import Header from '../include/Header';
+import Footer from '../include/Footer';
 export default {
-  data: () => ({
-    drawer: false
-  }),
   props: {
     source: String
+  },
+  components: {
+    appToolbar: Toolbar,
+    appHeader: Header,
+    appFooter: Footer
   }
 };
 </script>
