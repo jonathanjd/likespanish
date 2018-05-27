@@ -1,52 +1,52 @@
 <template>
   <section>
-    <v-navigation-drawer fixed v-model="drawer" app>
-      <v-list dense>
+    <v-navigation-drawer clipped fixed v-model="drawer" app>
+      <v-list>
 
-        <v-list-tile @click="">
+        <v-list-tile :to="{ name: 'home' }">
           <v-list-tile-action>
             <v-icon>home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title><router-link :to="{ name: 'home' }">Home</router-link></v-list-tile-title>
+            <v-list-tile-title>Home</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="">
+        <v-list-tile :to="{ name: 'about' }">
           <v-list-tile-action>
             <v-icon>info
             </v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title><router-link :to="{ name: 'about' }">About Us</router-link></v-list-tile-title>
+            <v-list-tile-title>About Us</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="">
+        <v-list-tile :to="{ name: 'plans' }">
           <v-list-tile-action>
             <v-icon>shopping_cart
             </v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title><router-link :to="{ name: 'plans' }">Plans</router-link></v-list-tile-title>
+            <v-list-tile-title>Plans</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="">
+        <v-list-tile :to="{ name: 'register'}">
           <v-list-tile-action>
             <v-icon>person_add</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title><router-link :to="{ name: 'register'}">Register</router-link></v-list-tile-title>
+            <v-list-tile-title>Register</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="">
+        <v-list-tile :to="{ name: 'login'}">
           <v-list-tile-action>
             <v-icon>person</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title><router-link :to="{ name: 'login'}">Login</router-link></v-list-tile-title>
+            <v-list-tile-title>Login</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
