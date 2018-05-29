@@ -1,5 +1,11 @@
 <template>
-  <h1>Admin Home</h1>
+  <v-container grid-list-xs>
+    <v-layout row wrap>
+      <v-flex xs12>
+        <h1>Admin Home</h1>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>

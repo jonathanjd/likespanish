@@ -65924,17 +65924,16 @@ var routes = [{
 }, {
   path: '/admin',
   component: __WEBPACK_IMPORTED_MODULE_5__components_admin_Admin___default.a,
-  name: 'admin',
   children: [{
     path: '',
-    name: 'AdminHome',
+    name: 'adminHome',
     component: __WEBPACK_IMPORTED_MODULE_8__components_admin_Home___default.a
   }, {
-    path: '/student',
+    path: 'student',
     name: 'adminStudent',
     component: __WEBPACK_IMPORTED_MODULE_6__components_admin_student_Home___default.a
   }, {
-    path: '/teacher',
+    path: 'teacher',
     name: 'adminTeacher',
     component: __WEBPACK_IMPORTED_MODULE_7__components_admin_teacher_Home___default.a
   }]
@@ -66327,7 +66326,7 @@ var render = function() {
       _c(
         "v-navigation-drawer",
         {
-          attrs: { clipped: "", fixed: "", app: "" },
+          attrs: { fixed: "", app: "" },
           model: {
             value: _vm.drawer,
             callback: function($$v) {
@@ -67308,10 +67307,6 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(68)
-}
 var normalizeComponent = __webpack_require__(1)
 /* script */
 var __vue_script__ = __webpack_require__(70)
@@ -67320,7 +67315,7 @@ var __vue_template__ = __webpack_require__(71)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -67355,46 +67350,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(69);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("2f3cc9bb", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5383a42c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-5383a42c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Login.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 68 */,
+/* 69 */,
 /* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -67430,6 +67387,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -67441,7 +67400,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         email: '',
         password: ''
       },
-      btnDisabled: false
+      loading: false
     };
   },
 
@@ -67450,13 +67409,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     login: function login() {
       var _this = this;
 
+      this.loading = true;
       __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/login', this.formLogin).then(function (response) {
         localStorage.setItem('token', response.data.token);
         var token = localStorage.getItem('token');
         __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/api/auth/user?token='.concat(token)).then(function (response) {
           var user = response.data;
+          if (user.data.type == 'admin') {
+            _this.$router.push({ path: '/admin' });
+          }
           if (user.data.type == 'student') {
-            _this.$router.push({ name: 'admin' });
+            _this.$router.push({ path: '/admin/student' });
+          }
+          if (user.data.type == 'teacher') {
+            _this.$router.push({ path: '/admin/teacher' });
           }
         });
       }).catch(function (error) {});
@@ -67536,11 +67502,11 @@ var render = function() {
                                     "v-btn",
                                     {
                                       attrs: {
+                                        loading: _vm.loading,
+                                        disabled: _vm.loading,
                                         color: "success",
                                         block: "",
-                                        dark: "",
-                                        large: "",
-                                        disabled: _vm.btnDisabled
+                                        large: ""
                                       },
                                       on: {
                                         click: function($event) {
@@ -67549,7 +67515,11 @@ var render = function() {
                                         }
                                       }
                                     },
-                                    [_vm._v("Login")]
+                                    [
+                                      _vm._v(
+                                        "\n                  Login\n                "
+                                      )
+                                    ]
                                   )
                                 ],
                                 1
@@ -71256,7 +71226,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71323,13 +71293,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      drawer: true,
+      loading: false,
       snackbar: false,
-      color: 'error',
       mode: '',
       timeout: 6000,
       text: ''
@@ -71341,13 +71316,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     logout: function logout() {
       var _this = this;
 
+      this.loading = true;
       var token = localStorage.getItem('token');
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.delete('/api/auth/logout?token='.concat(token)).then(function (response) {
         localStorage.removeItem('token');
         _this.$router.push({ name: 'login' });
       }).catch(function (error) {
-        var myError = error.data;
-        _this.text = myError.msg;
+        if (error.response.status === 401) {
+          localStorage.removeItem('token');
+          _this.$router.push({ name: 'login' });
+        } else {
+          var myError = error.data;
+          _this.text = myError;
+        }
         _this.snackbar = true;
       });
     }
@@ -71367,7 +71348,16 @@ var render = function() {
     [
       _c(
         "v-navigation-drawer",
-        { attrs: { permanent: "", absolute: "" } },
+        {
+          attrs: { fixed: "", app: "" },
+          model: {
+            value: _vm.drawer,
+            callback: function($$v) {
+              _vm.drawer = $$v
+            },
+            expression: "drawer"
+          }
+        },
         [
           _c(
             "v-toolbar",
@@ -71428,7 +71418,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-list-tile",
-                { on: { click: _vm.logout } },
+                { attrs: { disabled: _vm.loading }, on: { click: _vm.logout } },
                 [
                   _c(
                     "v-list-tile-action",
@@ -71440,7 +71430,19 @@ var render = function() {
                     "v-list-tile-content",
                     [_c("v-list-tile-title", [_vm._v("Logout")])],
                     1
-                  )
+                  ),
+                  _vm._v(" "),
+                  _vm.loading
+                    ? _c(
+                        "v-list-tile-action",
+                        [
+                          _c("v-progress-circular", {
+                            attrs: { indeterminate: "" }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm._e()
                 ],
                 1
               )
@@ -71463,7 +71465,7 @@ var render = function() {
         {
           attrs: {
             timeout: _vm.timeout,
-            color: _vm.color,
+            color: "error",
             "multi-line": _vm.mode === "multi-line",
             vertical: _vm.mode === "vertical"
           },
@@ -71592,7 +71594,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71603,6 +71605,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -71618,7 +71626,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Admin Student Home")])
+  return _c(
+    "v-container",
+    { attrs: { "grid-list-xs": "" } },
+    [
+      _c(
+        "v-layout",
+        { attrs: { row: "", wrap: "" } },
+        [
+          _c("v-flex", { attrs: { xs12: "" } }, [
+            _c("h1", [_vm._v("Admin Student Home")])
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -71716,7 +71740,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71731,8 +71755,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  created: function created() {
+    console.log('hola');
+  }
+});
 
 /***/ }),
 /* 112 */
@@ -71742,7 +71776,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Admin Teacher Home")])
+  return _c(
+    "v-container",
+    { attrs: { "grid-list-xs": "" } },
+    [
+      _c(
+        "v-layout",
+        { attrs: { row: "", wrap: "" } },
+        [
+          _c("v-flex", { attrs: { xs12: "" } }, [
+            _c("h1", [_vm._v("Admin Teacher Home")])
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -71840,7 +71890,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -71851,6 +71901,12 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n", ""]);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -71866,7 +71922,23 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Admin Home")])
+  return _c(
+    "v-container",
+    { attrs: { "grid-list-xs": "" } },
+    [
+      _c(
+        "v-layout",
+        { attrs: { row: "", wrap: "" } },
+        [
+          _c("v-flex", { attrs: { xs12: "" } }, [
+            _c("h1", [_vm._v("Admin Home")])
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

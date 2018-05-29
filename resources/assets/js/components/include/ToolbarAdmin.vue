@@ -1,7 +1,8 @@
 <template>
   <section>
-    <v-navigation-drawer permanent absolute>
-
+    <v-navigation-drawer v-model="drawer"
+      fixed
+      app>
       <v-toolbar flat class="transparent">
         <v-list class="pa-0">
           <v-list-tile avatar>
@@ -26,13 +27,16 @@
           </v-list-tile-content>
         </v-list-tile>
 
-        <v-list-tile @click="logout">
+        <v-list-tile @click="logout" :disabled="loading">
           <v-list-tile-action>
             <v-icon>exit_to_app</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>Logout</v-list-tile-title>
           </v-list-tile-content>
+          <v-list-tile-action v-if="loading">
+            <v-progress-circular indeterminate></v-progress-circular>
+          </v-list-tile-action>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -41,7 +45,7 @@
     </v-toolbar>
     <v-snackbar
       :timeout="timeout"
-      :color="color"
+      color="error"
       :multi-line="mode === 'multi-line'"
       :vertical="mode === 'vertical'"
       v-model="snackbar"
@@ -57,8 +61,9 @@ import axios from 'axios';
 export default {
   data() {
     return {
+      drawer: true,
+      loading: false,
       snackbar: false,
-      color: 'error',
       mode: '',
       timeout: 6000,
       text: ''
@@ -67,6 +72,7 @@ export default {
 
   methods: {
     logout() {
+      this.loading = true;
       const token = localStorage.getItem('token');
       axios
         .delete('/api/auth/logout?token='.concat(token))
@@ -75,8 +81,13 @@ export default {
           this.$router.push({ name: 'login' });
         })
         .catch(error => {
-          let myError = error.data;
-          this.text = myError.msg;
+          if (error.response.status === 401) {
+            localStorage.removeItem('token');
+            this.$router.push({ name: 'login' });
+          } else {
+            let myError = error.data;
+            this.text = myError;
+          }
           this.snackbar = true;
         });
     }

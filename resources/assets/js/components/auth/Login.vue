@@ -10,7 +10,9 @@
                 <v-form>
                   <v-text-field type="email" label="Email" v-model="formLogin.email"></v-text-field>
                   <v-text-field type="password" label="Password" v-model="formLogin.password"></v-text-field>
-                  <v-btn color="success" @click.prevent="login" block dark large :disabled="btnDisabled">Login</v-btn>
+                  <v-btn :loading="loading" :disabled="loading" color="success" block large @click.prevent="login">
+                    Login
+                  </v-btn>
                 </v-form>
               </v-card-text>
             </v-card>
@@ -33,12 +35,13 @@ export default {
         email: '',
         password: ''
       },
-      btnDisabled: false
+      loading: false
     };
   },
 
   methods: {
     login() {
+      this.loading = true;
       axios
         .post('/api/login', this.formLogin)
         .then(response => {
@@ -46,8 +49,14 @@ export default {
           const token = localStorage.getItem('token');
           axios.get('/api/auth/user?token='.concat(token)).then(response => {
             let user = response.data;
+            if (user.data.type == 'admin') {
+              this.$router.push({ path: '/admin' });
+            }
             if (user.data.type == 'student') {
-              this.$router.push({ name: 'admin' });
+              this.$router.push({ path: '/admin/student' });
+            }
+            if (user.data.type == 'teacher') {
+              this.$router.push({ path: '/admin/teacher' });
             }
           });
         })
@@ -61,6 +70,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

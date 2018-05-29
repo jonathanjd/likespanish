@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-navigation-drawer clipped fixed v-model="drawer" app>
+    <v-navigation-drawer fixed v-model="drawer" app>
       <v-list>
 
         <v-list-tile :to="{ name: 'home' }">

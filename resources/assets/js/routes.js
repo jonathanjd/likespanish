@@ -36,19 +36,18 @@ export const routes = [{
   {
     path: '/admin',
     component: Admin,
-    name: 'admin',
     children: [{
         path: '',
-        name: 'AdminHome',
+        name: 'adminHome',
         component: AdminHome
       },
       {
-        path: '/student',
+        path: 'student',
         name: 'adminStudent',
         component: AdminStudentHome
       },
       {
-        path: '/teacher',
+        path: 'teacher',
         name: 'adminTeacher',
         component: AdminTeacherHome
       },
