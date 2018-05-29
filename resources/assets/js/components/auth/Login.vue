@@ -5,11 +5,15 @@
       <v-container grid-list-xs>
         <v-layout row wrap>
           <v-flex xs6 offset-xs3>
-            <v-card class="mt-4 pa-4">
-              <v-card-text>
+            <v-card class="mt-4 elevation-12">
+              <v-toolbar dark color="primary">
+                <v-icon>person</v-icon>
+                <v-toolbar-title>Login Form</v-toolbar-title>
+              </v-toolbar>
+              <v-card-text class="pa-4">
                 <v-form>
-                  <v-text-field type="email" label="Email" v-model="formLogin.email"></v-text-field>
-                  <v-text-field type="password" label="Password" v-model="formLogin.password"></v-text-field>
+                  <v-text-field type="email" prepend-icon="email" label="Email" v-model="formLogin.email"></v-text-field>
+                  <v-text-field type="password" prepend-icon="lock" label="Password" v-model="formLogin.password"></v-text-field>
                   <v-btn :loading="loading" :disabled="loading" color="success" block large @click.prevent="login">
                     Login
                   </v-btn>

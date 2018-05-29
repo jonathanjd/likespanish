@@ -11,24 +11,21 @@ import AdminHome from './components/admin/Home';
 export const routes = [{
     path: '/',
     component: Home,
-    name: 'home'
+    name: 'home',
   },
   {
     path: '/login',
     component: Login,
     name: 'login'
-  },
-  {
+  }, {
     path: '/register',
     component: Register,
     name: 'register'
-  },
-  {
+  }, {
     path: '/plans',
     component: Plans,
     name: 'plans'
-  },
-  {
+  }, {
     path: '/about',
     component: About,
     name: 'about'

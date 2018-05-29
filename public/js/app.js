@@ -66199,7 +66199,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -66259,56 +66259,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {
-      drawer: false
-    };
+    return {};
   }
 });
 
@@ -66324,132 +66278,40 @@ var render = function() {
     "section",
     [
       _c(
-        "v-navigation-drawer",
-        {
-          attrs: { fixed: "", app: "" },
-          model: {
-            value: _vm.drawer,
-            callback: function($$v) {
-              _vm.drawer = $$v
-            },
-            expression: "drawer"
-          }
-        },
+        "v-toolbar",
+        { attrs: { dark: "", fixed: "", app: "" } },
         [
+          _c("v-toolbar-title", [_vm._v("LikeSpanish")]),
+          _vm._v(" "),
+          _c("v-spacer"),
+          _vm._v(" "),
           _c(
-            "v-list",
+            "v-toolbar-items",
             [
               _c(
-                "v-list-tile",
-                { attrs: { to: { name: "home" } } },
-                [
-                  _c("v-list-tile-action", [_c("v-icon", [_vm._v("home")])], 1),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("Home")])],
-                    1
-                  )
-                ],
-                1
+                "v-btn",
+                { attrs: { flat: "", to: { name: "home" }, exact: "" } },
+                [_vm._v("Home")]
               ),
               _vm._v(" "),
-              _c(
-                "v-list-tile",
-                { attrs: { to: { name: "about" } } },
-                [
-                  _c(
-                    "v-list-tile-action",
-                    [_c("v-icon", [_vm._v("info\n          ")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("About Us")])],
-                    1
-                  )
-                ],
-                1
-              ),
+              _c("v-btn", { attrs: { flat: "", to: { name: "about" } } }, [
+                _vm._v("About Us")
+              ]),
               _vm._v(" "),
-              _c(
-                "v-list-tile",
-                { attrs: { to: { name: "plans" } } },
-                [
-                  _c(
-                    "v-list-tile-action",
-                    [_c("v-icon", [_vm._v("shopping_cart\n          ")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("Plans")])],
-                    1
-                  )
-                ],
-                1
-              ),
+              _c("v-btn", { attrs: { flat: "", to: { name: "plans" } } }, [
+                _vm._v("Plans")
+              ]),
               _vm._v(" "),
-              _c(
-                "v-list-tile",
-                { attrs: { to: { name: "register" } } },
-                [
-                  _c(
-                    "v-list-tile-action",
-                    [_c("v-icon", [_vm._v("person_add")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("Register")])],
-                    1
-                  )
-                ],
-                1
-              ),
+              _c("v-btn", { attrs: { flat: "", to: { name: "register" } } }, [
+                _vm._v("Register")
+              ]),
               _vm._v(" "),
-              _c(
-                "v-list-tile",
-                { attrs: { to: { name: "login" } } },
-                [
-                  _c(
-                    "v-list-tile-action",
-                    [_c("v-icon", [_vm._v("person")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-tile-content",
-                    [_c("v-list-tile-title", [_vm._v("Login")])],
-                    1
-                  )
-                ],
-                1
-              )
+              _c("v-btn", { attrs: { flat: "", to: { name: "login" } } }, [
+                _vm._v("Login")
+              ])
             ],
             1
           )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-toolbar",
-        { attrs: { dark: "", dark: "", fixed: "", app: "" } },
-        [
-          _c("v-toolbar-side-icon", {
-            on: {
-              click: function($event) {
-                $event.stopPropagation()
-                _vm.drawer = !_vm.drawer
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("v-toolbar-title", [_vm._v("LikeSpanish")])
         ],
         1
       )
@@ -67389,6 +67251,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -67465,16 +67331,32 @@ var render = function() {
                     [
                       _c(
                         "v-card",
-                        { staticClass: "mt-4 pa-4" },
+                        { staticClass: "mt-4 elevation-12" },
                         [
                           _c(
+                            "v-toolbar",
+                            { attrs: { dark: "", color: "primary" } },
+                            [
+                              _c("v-icon", [_vm._v("person")]),
+                              _vm._v(" "),
+                              _c("v-toolbar-title", [_vm._v("Login Form")])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
                             "v-card-text",
+                            { staticClass: "pa-4" },
                             [
                               _c(
                                 "v-form",
                                 [
                                   _c("v-text-field", {
-                                    attrs: { type: "email", label: "Email" },
+                                    attrs: {
+                                      type: "email",
+                                      "prepend-icon": "email",
+                                      label: "Email"
+                                    },
                                     model: {
                                       value: _vm.formLogin.email,
                                       callback: function($$v) {
@@ -67487,6 +67369,7 @@ var render = function() {
                                   _c("v-text-field", {
                                     attrs: {
                                       type: "password",
+                                      "prepend-icon": "lock",
                                       label: "Password"
                                     },
                                     model: {
@@ -67644,7 +67527,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -67661,6 +67544,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__include_Footer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__include_Footer__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -67752,10 +67641,26 @@ var render = function() {
                     [
                       _c(
                         "v-card",
-                        { staticClass: "mt-4 pa-4" },
+                        { staticClass: "mt-4 elevation-12" },
                         [
                           _c(
+                            "v-toolbar",
+                            { attrs: { dark: "", color: "primary" } },
+                            [
+                              _c("v-icon", [_vm._v("person")]),
+                              _vm._v(" "),
+                              _c("v-toolbar-title", [
+                                _vm._v(
+                                  "\n                Register Form\n              "
+                                )
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
                             "v-card-text",
+                            { staticClass: "pa-4" },
                             [
                               _c(
                                 "v-form",
