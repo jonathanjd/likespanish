@@ -3,6 +3,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import About from './components/about/About';
 import Plans from './components/plan/Plans';
+import Admin from './components/admin/Admin';
 
 export const routes = [{
     path: '/',
@@ -29,4 +30,9 @@ export const routes = [{
     component: About,
     name: 'about'
   },
+  {
+    path: '/admin',
+    component: Admin,
+    name: 'admin',
+  }
 ]
