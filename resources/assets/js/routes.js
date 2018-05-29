@@ -4,6 +4,9 @@ import Register from './components/auth/Register';
 import About from './components/about/About';
 import Plans from './components/plan/Plans';
 import Admin from './components/admin/Admin';
+import AdminStudentHome from './components/admin/student/Home';
+import AdminTeacherHome from './components/admin/teacher/Home';
+import AdminHome from './components/admin/Home';
 
 export const routes = [{
     path: '/',
@@ -34,5 +37,21 @@ export const routes = [{
     path: '/admin',
     component: Admin,
     name: 'admin',
+    children: [{
+        path: '',
+        name: 'AdminHome',
+        component: AdminHome
+      },
+      {
+        path: '/student',
+        name: 'adminStudent',
+        component: AdminStudentHome
+      },
+      {
+        path: '/teacher',
+        name: 'adminTeacher',
+        component: AdminTeacherHome
+      },
+    ]
   }
 ]

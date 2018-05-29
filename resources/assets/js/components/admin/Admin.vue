@@ -2,7 +2,7 @@
   <v-app>
     <app-toolbar-admin></app-toolbar-admin>
     <v-content>
-      <h1>Admin</h1>
+      <router-view></router-view>
     </v-content>
     <app-footer></app-footer>
   </v-app>

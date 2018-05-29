@@ -10,7 +10,7 @@
                 <v-form>
                   <v-text-field type="email" label="Email" v-model="formLogin.email"></v-text-field>
                   <v-text-field type="password" label="Password" v-model="formLogin.password"></v-text-field>
-                  <v-btn color="success" @click.prevent="login" block dark large>Login</v-btn>
+                  <v-btn color="success" @click.prevent="login" block dark large :disabled="btnDisabled">Login</v-btn>
                 </v-form>
               </v-card-text>
             </v-card>
@@ -32,7 +32,8 @@ export default {
       formLogin: {
         email: '',
         password: ''
-      }
+      },
+      btnDisabled: false
     };
   },
 
