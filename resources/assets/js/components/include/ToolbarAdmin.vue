@@ -7,10 +7,10 @@
         <v-list class="pa-0">
           <v-list-tile avatar>
             <v-list-tile-avatar>
-              <img src="https://randomuser.me/api/portraits/men/85.jpg" >
+              <img src="/img/admin/user-admin.png" >
             </v-list-tile-avatar>
             <v-list-tile-content>
-              <v-list-tile-title>John Leider</v-list-tile-title>
+              <v-list-tile-title>{{ myTileTitle }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
@@ -68,6 +68,17 @@ export default {
       timeout: 6000,
       text: ''
     };
+  },
+
+  created() {
+    const token = localStorage.getItem('token');
+    this.$store.dispatch('loadData', token);
+  },
+
+  computed: {
+    myTileTitle() {
+      return this.$store.getters.getName;
+    }
   },
 
   methods: {

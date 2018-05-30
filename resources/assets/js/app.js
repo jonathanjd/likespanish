@@ -7,6 +7,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import {
+    store
+} from "./store/store";
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 import Vuetify from 'vuetify'
@@ -36,5 +39,6 @@ import App from './components/App.vue';
 const app = new Vue({
     el: '#app',
     router,
+    store,
     render: h => h(App)
 });
