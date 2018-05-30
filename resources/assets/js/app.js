@@ -7,6 +7,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import VeeValidate from 'vee-validate';
+Vue.use(VeeValidate);
 import Vuetify from 'vuetify'
 
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
