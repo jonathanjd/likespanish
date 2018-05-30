@@ -10,7 +10,9 @@
               <img src="/img/admin/user-admin.png" >
             </v-list-tile-avatar>
             <v-list-tile-content>
-              <v-list-tile-title>{{ myTileTitle }}</v-list-tile-title>
+              <v-list-tile-title>
+                {{ myTileTitle }}
+              </v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
@@ -18,14 +20,18 @@
 
       <v-list dense>
         <v-divider></v-divider>
-        <v-list-tile @click="">
-          <v-list-tile-action>
-            <v-icon>home</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
+
+        <template v-if="myTypeUser === 'admin'">
+          <v-list-tile @click="" v-for="(item, index) in navigationAdmin" exact :key="index" :to="{ name: item.link }">
+            <v-list-tile-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
+
 
         <v-list-tile @click="logout" :disabled="loading">
           <v-list-tile-action>
@@ -66,7 +72,14 @@ export default {
       snackbar: false,
       mode: '',
       timeout: 6000,
-      text: ''
+      text: '',
+      navigationTeacher: [{ title: 'Dashboard', icon: 'dashboard', link: '' }],
+      navigationStudent: [{ title: 'Dashboard', icon: 'dashboard', link: '' }],
+      navigationAdmin: [
+        { title: 'Dashboard', icon: 'dashboard', link: 'admin.dashboard' },
+        { title: 'Create Student', icon: 'create', link: 'admin.create.student' },
+        { title: 'Create Teacher', icon: 'create', link: 'admin.create.teacher' }
+      ]
     };
   },
 
@@ -77,7 +90,10 @@ export default {
 
   computed: {
     myTileTitle() {
-      return this.$store.getters.getName;
+      return this.$store.getters.getName === '' ? 'Loading...' : this.$store.getters.getName;
+    },
+    myTypeUser() {
+      return this.$store.getters.getType === '' ? false : this.$store.getters.getType;
     }
   },
 

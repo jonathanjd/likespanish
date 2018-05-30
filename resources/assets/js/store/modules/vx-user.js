@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const state = {
   name: '',
+  type: '',
   data: ''
 };
 
@@ -14,7 +15,11 @@ const getters = {
 
   getData(state) {
     return state.data;
-  }
+  },
+
+  getType(state) {
+    return state.type;
+  },
 
 };
 
@@ -26,7 +31,11 @@ const mutations = {
 
   setData(state, payload) {
     state.data = payload;
-  }
+  },
+
+  setType(state, payload) {
+    state.type = payload;
+  },
 
 };
 
@@ -46,6 +55,7 @@ const actions = {
         if (response.status === 200) {
           commit('setData', response.data);
           commit('setName', response.data.data.name);
+          commit('setType', response.data.data.type);
         } else {
           reject();
         }

@@ -2,7 +2,9 @@
   <v-app>
     <app-toolbar-admin></app-toolbar-admin>
     <v-content>
-        <router-view></router-view>
+        <transition name="fadeUp" mode="out-in" appear>
+          <router-view></router-view>
+        </transition>
     </v-content>
     <app-footer></app-footer>
   </v-app>
