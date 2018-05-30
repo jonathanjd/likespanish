@@ -5,21 +5,28 @@
       <v-container grid-list-xs>
         <v-layout row wrap>
           <v-flex xs6 offset-xs3>
-            <v-card class="mt-4 elevation-12">
-              <v-toolbar dark color="primary">
-                <v-icon>person</v-icon>
-                <v-toolbar-title>Login Form</v-toolbar-title>
-              </v-toolbar>
-              <v-card-text class="pa-4">
-                <v-form>
-                  <v-text-field v-validate="'required|email|max:255'" :error-messages="errors.collect('email')" data-vv-name="email" type="email" prepend-icon="email" label="Email" v-model="formLogin.email"></v-text-field>
-                  <v-text-field v-validate="'required|max:255'" :error-messages="errors.collect('password')" data-vv-name="password" type="password" prepend-icon="lock" label="Password" v-model="formLogin.password"></v-text-field>
-                  <v-btn :loading="loading" :disabled="loading" color="success" block large @click.prevent="login">
-                    Login
-                  </v-btn>
-                </v-form>
-              </v-card-text>
-            </v-card>
+            <transition name="fadeUp" appear>
+              <v-card class="mt-4 elevation-12">
+                <v-toolbar dark color="primary">
+                  <v-icon>person</v-icon>
+                  <v-toolbar-title>Login Form</v-toolbar-title>
+                </v-toolbar>
+                <v-card-text class="pa-4">
+                  <v-form>
+
+                    <v-text-field v-validate="'required|email|max:255'" :error-messages="errors.collect('email')" data-vv-name="email" type="email" prepend-icon="email" label="Email" v-model="formLogin.email" required></v-text-field>
+
+                    <v-text-field v-validate="'required|min:6|max:255'" :error-messages="errors.collect('password')" data-vv-name="password" type="password" prepend-icon="lock" label="Password" v-model="formLogin.password" required></v-text-field>
+
+                    <v-btn :loading="loading" :disabled="loading" color="success" block large @click.prevent="login">
+                      Login
+                    </v-btn>
+
+                  </v-form>
+                </v-card-text>
+              </v-card>
+
+            </transition>
           </v-flex>
         </v-layout>
       </v-container>

@@ -67268,6 +67268,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -67365,103 +67372,122 @@ var render = function() {
                     { attrs: { xs6: "", "offset-xs3": "" } },
                     [
                       _c(
-                        "v-card",
-                        { staticClass: "mt-4 elevation-12" },
+                        "transition",
+                        { attrs: { name: "fadeUp", appear: "" } },
                         [
                           _c(
-                            "v-toolbar",
-                            { attrs: { dark: "", color: "primary" } },
-                            [
-                              _c("v-icon", [_vm._v("person")]),
-                              _vm._v(" "),
-                              _c("v-toolbar-title", [_vm._v("Login Form")])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-text",
-                            { staticClass: "pa-4" },
+                            "v-card",
+                            { staticClass: "mt-4 elevation-12" },
                             [
                               _c(
-                                "v-form",
+                                "v-toolbar",
+                                { attrs: { dark: "", color: "primary" } },
                                 [
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value: "required|email|max:255",
-                                        expression: "'required|email|max:255'"
-                                      }
-                                    ],
-                                    attrs: {
-                                      "error-messages": _vm.errors.collect(
-                                        "email"
-                                      ),
-                                      "data-vv-name": "email",
-                                      type: "email",
-                                      "prepend-icon": "email",
-                                      label: "Email"
-                                    },
-                                    model: {
-                                      value: _vm.formLogin.email,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.formLogin, "email", $$v)
-                                      },
-                                      expression: "formLogin.email"
-                                    }
-                                  }),
+                                  _c("v-icon", [_vm._v("person")]),
                                   _vm._v(" "),
-                                  _c("v-text-field", {
-                                    directives: [
-                                      {
-                                        name: "validate",
-                                        rawName: "v-validate",
-                                        value: "required|max:255",
-                                        expression: "'required|max:255'"
-                                      }
-                                    ],
-                                    attrs: {
-                                      "error-messages": _vm.errors.collect(
-                                        "password"
-                                      ),
-                                      "data-vv-name": "password",
-                                      type: "password",
-                                      "prepend-icon": "lock",
-                                      label: "Password"
-                                    },
-                                    model: {
-                                      value: _vm.formLogin.password,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.formLogin, "password", $$v)
-                                      },
-                                      expression: "formLogin.password"
-                                    }
-                                  }),
-                                  _vm._v(" "),
+                                  _c("v-toolbar-title", [_vm._v("Login Form")])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-text",
+                                { staticClass: "pa-4" },
+                                [
                                   _c(
-                                    "v-btn",
-                                    {
-                                      attrs: {
-                                        loading: _vm.loading,
-                                        disabled: _vm.loading,
-                                        color: "success",
-                                        block: "",
-                                        large: ""
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          $event.preventDefault()
-                                          return _vm.login($event)
-                                        }
-                                      }
-                                    },
+                                    "v-form",
                                     [
-                                      _vm._v(
-                                        "\n                  Login\n                "
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required|email|max:255",
+                                            expression:
+                                              "'required|email|max:255'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "email"
+                                          ),
+                                          "data-vv-name": "email",
+                                          type: "email",
+                                          "prepend-icon": "email",
+                                          label: "Email",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.formLogin.email,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.formLogin,
+                                              "email",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "formLogin.email"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required|min:6|max:255",
+                                            expression:
+                                              "'required|min:6|max:255'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          "error-messages": _vm.errors.collect(
+                                            "password"
+                                          ),
+                                          "data-vv-name": "password",
+                                          type: "password",
+                                          "prepend-icon": "lock",
+                                          label: "Password",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.formLogin.password,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.formLogin,
+                                              "password",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "formLogin.password"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            loading: _vm.loading,
+                                            disabled: _vm.loading,
+                                            color: "success",
+                                            block: "",
+                                            large: ""
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              return _vm.login($event)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                    Login\n                  "
+                                          )
+                                        ]
                                       )
-                                    ]
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -67621,7 +67647,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -67670,6 +67696,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -67677,6 +67725,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      loading: false,
+      snackbar: false,
+      color: 'error',
+      mode: '',
+      timeout: 7000,
+      text: '',
       formData: {
         name: '',
         email: '',
@@ -67688,13 +67742,36 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
   methods: {
-    saveUser: function saveUser() {
-      __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/register', this.formData, {
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
-      }).then(function (response) {
-        console.log(response.data);
-      }).catch(function (error) {
-        console.log(error);
+    register: function register() {
+      var _this = this;
+
+      this.loading = true;
+
+      this.$validator.validateAll().then(function (res) {
+        if (res) {
+          //Success Form
+          //Axios Start
+          __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/api/register', _this.formData).then(function (response) {
+            _this.color = 'success';
+            _this.snackbar = true;
+            _this.text = 'User Registered';
+            setTimeout(function () {
+              _this.color = 'error';
+              _this.snackbar = false;
+              _this.$router.push({ name: 'login' });
+            }, 3000);
+          }).catch(function (error) {
+            _this.text = error.response.data.msg;
+            _this.snackbar = true;
+            _this.loading = false;
+          });
+          //Axios End
+        } else {
+          //Error Form
+          _this.loading = false;
+          _this.snackbar = true;
+          _this.text = 'Error In The Form';
+        }
       });
     }
   },
@@ -67734,113 +67811,187 @@ var render = function() {
                     { attrs: { xs6: "", "offset-xs3": "" } },
                     [
                       _c(
-                        "v-card",
-                        { staticClass: "mt-4 elevation-12" },
+                        "transition",
+                        { attrs: { name: "fadeUp", appear: "" } },
                         [
                           _c(
-                            "v-toolbar",
-                            { attrs: { dark: "", color: "primary" } },
-                            [
-                              _c("v-icon", [_vm._v("person")]),
-                              _vm._v(" "),
-                              _c("v-toolbar-title", [
-                                _vm._v(
-                                  "\n                Register Form\n              "
-                                )
-                              ])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-card-text",
-                            { staticClass: "pa-4" },
+                            "v-card",
+                            { staticClass: "mt-4 elevation-12" },
                             [
                               _c(
-                                "v-form",
+                                "v-toolbar",
+                                { attrs: { dark: "", color: "primary" } },
                                 [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      type: "text",
-                                      label: "Name",
-                                      required: ""
-                                    },
-                                    model: {
-                                      value: _vm.formData.name,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.formData, "name", $$v)
-                                      },
-                                      expression: "formData.name"
-                                    }
-                                  }),
+                                  _c("v-icon", [_vm._v("person")]),
                                   _vm._v(" "),
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      type: "email",
-                                      label: "Email",
-                                      required: ""
-                                    },
-                                    model: {
-                                      value: _vm.formData.email,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.formData, "email", $$v)
-                                      },
-                                      expression: "formData.email"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      type: "password",
-                                      label: "Password",
-                                      required: ""
-                                    },
-                                    model: {
-                                      value: _vm.formData.password,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.formData, "password", $$v)
-                                      },
-                                      expression: "formData.password"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      type: "password",
-                                      label: "Confirm Password",
-                                      required: ""
-                                    },
-                                    model: {
-                                      value: _vm.formData.password_confirmation,
-                                      callback: function($$v) {
-                                        _vm.$set(
-                                          _vm.formData,
-                                          "password_confirmation",
-                                          $$v
-                                        )
-                                      },
-                                      expression:
-                                        "formData.password_confirmation"
-                                    }
-                                  }),
-                                  _vm._v(" "),
+                                  _c("v-toolbar-title", [
+                                    _vm._v(
+                                      "\n                  Register Form\n                "
+                                    )
+                                  ])
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-text",
+                                { staticClass: "pa-4" },
+                                [
                                   _c(
-                                    "v-btn",
-                                    {
-                                      attrs: {
-                                        color: "success",
-                                        block: "",
-                                        dark: "",
-                                        large: ""
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          $event.preventDefault()
-                                          return _vm.saveUser($event)
+                                    "v-form",
+                                    [
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required|max:255",
+                                            expression: "'required|max:255'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          name: "name",
+                                          type: "text",
+                                          label: "Name",
+                                          "error-messages": _vm.errors.collect(
+                                            "name"
+                                          ),
+                                          "data-vv-name": "name",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.formData.name,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.formData, "name", $$v)
+                                          },
+                                          expression: "formData.name"
                                         }
-                                      }
-                                    },
-                                    [_vm._v("Register")]
+                                      }),
+                                      _vm._v(" "),
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required|email|max:255",
+                                            expression:
+                                              "'required|email|max:255'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          name: "email",
+                                          type: "email",
+                                          label: "Email",
+                                          "error-messages": _vm.errors.collect(
+                                            "email"
+                                          ),
+                                          "data-vv-name": "email",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.formData.email,
+                                          callback: function($$v) {
+                                            _vm.$set(_vm.formData, "email", $$v)
+                                          },
+                                          expression: "formData.email"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value: "required|min:6|max:255",
+                                            expression:
+                                              "'required|min:6|max:255'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          name: "password",
+                                          type: "password",
+                                          label: "Password",
+                                          "error-messages": _vm.errors.collect(
+                                            "password"
+                                          ),
+                                          "data-vv-name": "password",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value: _vm.formData.password,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.formData,
+                                              "password",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "formData.password"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("v-text-field", {
+                                        directives: [
+                                          {
+                                            name: "validate",
+                                            rawName: "v-validate",
+                                            value:
+                                              "required|confirmed:password|min:6|max:255",
+                                            expression:
+                                              "'required|confirmed:password|min:6|max:255'"
+                                          }
+                                        ],
+                                        attrs: {
+                                          name: "password_confirmation",
+                                          type: "password",
+                                          label: "Confirm Password",
+                                          "error-messages": _vm.errors.collect(
+                                            "password_confirmation"
+                                          ),
+                                          "data-vv-name":
+                                            "password_confirmation",
+                                          required: ""
+                                        },
+                                        model: {
+                                          value:
+                                            _vm.formData.password_confirmation,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.formData,
+                                              "password_confirmation",
+                                              $$v
+                                            )
+                                          },
+                                          expression:
+                                            "formData.password_confirmation"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          attrs: {
+                                            loading: _vm.loading,
+                                            disabled: _vm.loading,
+                                            color: "success",
+                                            block: "",
+                                            large: ""
+                                          },
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              return _vm.register($event)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                    Register\n                  "
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -67864,7 +68015,42 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("app-footer")
+      _c("app-footer"),
+      _vm._v(" "),
+      _c(
+        "v-snackbar",
+        {
+          attrs: {
+            timeout: _vm.timeout,
+            color: _vm.color,
+            "multi-line": _vm.mode === "multi-line",
+            vertical: _vm.mode === "vertical"
+          },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
+        [
+          _vm._v("\n    " + _vm._s(_vm.text) + "\n    "),
+          _c(
+            "v-btn",
+            {
+              attrs: { dark: "", flat: "" },
+              nativeOn: {
+                click: function($event) {
+                  return _vm.closeSnackbar($event)
+                }
+              }
+            },
+            [_vm._v("Close")]
+          )
+        ],
+        1
+      )
     ],
     1
   )
