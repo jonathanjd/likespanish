@@ -73,7 +73,11 @@
                   <v-text-field name="details" type="text" label="Details" v-validate="'required|max:100'" :error-messages="errors.collect('details')"
                     data-vv-name="details" v-model="formTeacher.details" required multi-line></v-text-field>
 
-                  <v-btn block color="success" dark><v-icon>save</v-icon></v-btn>
+
+                  <v-btn :loading="loading" :disabled="loading" color="success" block large @click.prevent="storeTeacher">
+                      <v-icon>save</v-icon>
+                  </v-btn>
+
                 </v-form>
 
               </v-card-text>
@@ -82,6 +86,11 @@
         </v-layout>
       </v-flex>
     </v-layout>
+    <v-snackbar
+      v-model="snackbar" :timeout="6000" :color="snackbarColor" :multi-line="snackbarMode === 'multi-line'" :vertical="snackbarMode === 'vertical'">
+      {{ snackbarText }}
+      <v-btn dark flat @click.native="snackbar = false">Close</v-btn>
+    </v-snackbar>
   </v-container>
 </template>
 
@@ -90,6 +99,11 @@ import moment from 'moment-timezone';
 export default {
   data() {
     return {
+      loading: false,
+      snackbar: false,
+      snackbarColor: '',
+      snackbarText: '',
+      snackbarMode: '',
       imgUrl: '/img/admin/user-admin.png',
       formUser: {
         name: '',
@@ -322,10 +336,31 @@ export default {
 
   created() {
     this.timeZone = moment.tz.names();
-    //console.log(moment.tz('America/Guayaquil').format('HH:mm'));
   },
 
   methods: {
+    cleanForm() {},
+
+    storeTeacher() {
+      this.loading = true;
+
+      this.$validator.validateAll().then(res => {
+        if (res) {
+          //Success Form
+          this.cleanForm();
+          this.snackbarText = 'Teacher Saved';
+          this.snackbarColor = 'success';
+          this.snackbar = true;
+          this.loading = false;
+        } else {
+          //Error Form
+          this.loading = false;
+          this.snackbarText = 'Error In The Form';
+          this.snackbarColor = 'error';
+          this.snackbar = true;
+        }
+      });
+    },
     onPickFile() {
       this.$refs.fileInput.click();
     },

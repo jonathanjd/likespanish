@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('vue2-animate/dist/vue2-animate.min.css');
 
 window.Vue = require('vue');
 import {
