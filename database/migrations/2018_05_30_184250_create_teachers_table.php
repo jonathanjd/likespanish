@@ -19,6 +19,7 @@ class CreateTeachersTable extends Migration
             $table->string('skypeid');
             $table->string('address');
             $table->string('city');
+            $table->string('state');
             $table->string('zipcode');
             $table->string('country');
             $table->string('timezone');
