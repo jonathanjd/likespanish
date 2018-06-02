@@ -8,4 +8,11 @@ class Teacher extends Model
 {
     //
     protected $fillable = ['photo', 'skypeid', 'address', 'city', 'zipcode', 'country', 'timezome', 'details', 'user_id'];
+
+    public function user()
+    {
+        # code...
+        return $this->belongsTo(User::class);
+    }
+
 }

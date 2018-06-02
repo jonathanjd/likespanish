@@ -70,7 +70,7 @@
                   <v-select name="timezone" :items="timeZone" v-model="formTeacher.timezone" v-validate="'required'" :error-messages="errors.collect('timezone')"
                     data-vv-name="timezone" autocomplete placeholder="TimeZone..."></v-select>
 
-                  <v-text-field name="details" type="text" label="Details" v-validate="'required|max:100'" :error-messages="errors.collect('details')"
+                  <v-text-field name="details" type="text" label="Details" v-validate="'required|max:500'" :error-messages="errors.collect('details')"
                     data-vv-name="details" v-model="formTeacher.details" required multi-line></v-text-field>
 
 
@@ -96,6 +96,7 @@
 
 <script>
 import moment from 'moment-timezone';
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -339,7 +340,22 @@ export default {
   },
 
   methods: {
-    cleanForm() {},
+    cleanForm() {
+      this.formUser.name = '';
+      this.formUser.email = '';
+      this.formUser.password = '';
+      this.formUser.password_confirmation = '';
+
+      this.formTeacher.photo = '';
+      this.formTeacher.skypeid = '';
+      this.formTeacher.address = '';
+      this.formTeacher.city = '';
+      this.formTeacher.state = '';
+      this.formTeacher.zipcode = '';
+      this.formTeacher.country = '';
+      this.formTeacher.timezone = '';
+      this.formTeacher.details = '';
+    },
 
     storeTeacher() {
       this.loading = true;
@@ -347,11 +363,36 @@ export default {
       this.$validator.validateAll().then(res => {
         if (res) {
           //Success Form
-          this.cleanForm();
-          this.snackbarText = 'Teacher Saved';
-          this.snackbarColor = 'success';
-          this.snackbar = true;
-          this.loading = false;
+          const token = localStorage.getItem('token');
+          let formData = {
+            name: this.formUser.name,
+            email: this.formUser.email,
+            password: this.formUser.password,
+            photo: this.formTeacher.photo,
+            skypeid: this.formTeacher.skypeid,
+            address: this.formTeacher.address,
+            city: this.formTeacher.city,
+            state: this.formTeacher.state,
+            zipcode: this.formTeacher.zipcode,
+            country: this.formTeacher.country,
+            timezone: this.formTeacher.timezone,
+            details: this.formTeacher.details
+          };
+          axios
+            .post('/api/auth/user/teacher?token='.concat(token), formData)
+            .then(response => {
+              this.cleanForm();
+              this.snackbarText = 'Teacher Saved';
+              this.snackbarColor = 'success';
+              this.snackbar = true;
+              this.loading = false;
+            })
+            .catch(error => {
+              this.loading = false;
+              this.snackbarText = 'Error In The Form';
+              this.snackbarColor = 'error';
+              this.snackbar = true;
+            });
         } else {
           //Error Form
           this.loading = false;
