@@ -15,21 +15,21 @@ class UserSeeder extends Seeder
         //
         $user = new User();
         $user->name = 'Admin';
-        $user->email = 'admin@likespanish.com';
+        $user->email = 'admin@awesomecv.com';
         $user->password = bcrypt('123456');
         $user->type = 'admin';
         $user->save();
 
         $user = new User();
         $user->name = 'Student';
-        $user->email = 'student@likespanish.com';
+        $user->email = 'student@awesomecv.com';
         $user->password = bcrypt('123456');
         $user->type = 'student';
         $user->save();
 
         $user = new User();
         $user->name = 'Teacher';
-        $user->email = 'teacher@likespanish.com';
+        $user->email = 'teacher@awesomecv.com';
         $user->password = bcrypt('123456');
         $user->type = 'teacher';
         $user->save();
