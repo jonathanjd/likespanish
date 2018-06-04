@@ -1,7 +1,7 @@
 <template>
   <section>
     <v-toolbar dark fixed app>
-      <v-toolbar-title>LikeSpanish</v-toolbar-title>
+      <v-toolbar-title>My App</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
       <v-btn flat :to="{ name: 'home' }" exact>Home</v-btn>

@@ -20,17 +20,18 @@
 
       <v-list dense>
         <v-divider></v-divider>
-
-        <template v-if="myTypeUser === 'admin'">
-          <v-list-tile @click="" v-for="(item, index) in navigationAdmin" exact :key="index" :to="{ name: item.link }">
-            <v-list-tile-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </template>
+        <transition-group name="fadeLeft">
+          <template v-if="myTypeUser === 'admin'">
+            <v-list-tile @click="" v-for="(item, index) in navigationAdmin" exact :key="index" :to="{ name: item.link }">
+              <v-list-tile-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-tile-action>
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </template>
+        </transition-group>
 
 
         <v-list-tile @click="logout" :disabled="loading">
@@ -78,7 +79,8 @@ export default {
       navigationAdmin: [
         { title: 'Dashboard', icon: 'dashboard', link: 'admin.dashboard' },
         { title: 'Create Student', icon: 'create', link: 'admin.create.student' },
-        { title: 'Create Teacher', icon: 'create', link: 'admin.create.teacher' }
+        { title: 'Create Teacher', icon: 'create', link: 'admin.create.teacher' },
+        { title: 'List Teacher', icon: 'list', link: 'admin.list.teacher' }
       ]
     };
   },

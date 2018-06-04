@@ -88449,6 +88449,9 @@ exports.push([module.i, "/*!\n* Vuetify v1.0.18\n* Forged by John Leider\n* Rele
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_admin_admin_CreateStudent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_admin_admin_CreateStudent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_admin_CreateTeacher__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admin_admin_CreateTeacher___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_admin_admin_CreateTeacher__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_admin_ListTeacher_vue__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_admin_admin_ListTeacher_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_admin_admin_ListTeacher_vue__);
+
 
 
 
@@ -88496,6 +88499,10 @@ var routes = [{
     path: 'create-teacher',
     name: 'admin.create.teacher',
     component: __WEBPACK_IMPORTED_MODULE_10__components_admin_admin_CreateTeacher___default.a
+  }, {
+    path: 'list-teacher',
+    name: 'admin.list.teacher',
+    component: __WEBPACK_IMPORTED_MODULE_11__components_admin_admin_ListTeacher_vue___default.a
   }, {
     path: 'student',
     name: 'adminStudent',
@@ -88849,7 +88856,7 @@ var render = function() {
         "v-toolbar",
         { attrs: { dark: "", fixed: "", app: "" } },
         [
-          _c("v-toolbar-title", [_vm._v("LikeSpanish")]),
+          _c("v-toolbar-title", [_vm._v("My App")]),
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
@@ -89174,11 +89181,11 @@ var render = function() {
     [
       _c(
         "v-footer",
-        { staticClass: "text-xs-center", attrs: { dark: "" } },
+        { staticClass: "text-xs-center", attrs: { dark: "", fixed: "" } },
         [
           _c("v-container", { attrs: { "grid-list-xs": "" } }, [
             _c("span", { staticClass: "white--text" }, [
-              _vm._v("LikeSpanish © 2018")
+              _vm._v("My App © 2018")
             ])
           ])
         ],
@@ -91229,7 +91236,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -91242,6 +91249,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
 //
 //
 //
@@ -91319,7 +91327,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       text: '',
       navigationTeacher: [{ title: 'Dashboard', icon: 'dashboard', link: '' }],
       navigationStudent: [{ title: 'Dashboard', icon: 'dashboard', link: '' }],
-      navigationAdmin: [{ title: 'Dashboard', icon: 'dashboard', link: 'admin.dashboard' }, { title: 'Create Student', icon: 'create', link: 'admin.create.student' }, { title: 'Create Teacher', icon: 'create', link: 'admin.create.teacher' }]
+      navigationAdmin: [{ title: 'Dashboard', icon: 'dashboard', link: 'admin.dashboard' }, { title: 'Create Student', icon: 'create', link: 'admin.create.student' }, { title: 'Create Teacher', icon: 'create', link: 'admin.create.teacher' }, { title: 'List Teacher', icon: 'list', link: 'admin.list.teacher' }]
     };
   },
   created: function created() {
@@ -91431,36 +91439,43 @@ var render = function() {
             [
               _c("v-divider"),
               _vm._v(" "),
-              _vm.myTypeUser === "admin"
-                ? _vm._l(_vm.navigationAdmin, function(item, index) {
-                    return _c(
-                      "v-list-tile",
-                      {
-                        key: index,
-                        attrs: { exact: "", to: { name: item.link } },
-                        on: { click: function($event) {} }
-                      },
-                      [
-                        _c(
-                          "v-list-tile-action",
-                          [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-list-tile-content",
+              _c(
+                "transition-group",
+                { attrs: { name: "fadeLeft" } },
+                [
+                  _vm.myTypeUser === "admin"
+                    ? _vm._l(_vm.navigationAdmin, function(item, index) {
+                        return _c(
+                          "v-list-tile",
+                          {
+                            key: index,
+                            attrs: { exact: "", to: { name: item.link } },
+                            on: { click: function($event) {} }
+                          },
                           [
-                            _c("v-list-tile-title", [
-                              _vm._v(_vm._s(item.title))
-                            ])
+                            _c(
+                              "v-list-tile-action",
+                              [_c("v-icon", [_vm._v(_vm._s(item.icon))])],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-tile-content",
+                              [
+                                _c("v-list-tile-title", [
+                                  _vm._v(_vm._s(item.title))
+                                ])
+                              ],
+                              1
+                            )
                           ],
                           1
                         )
-                      ],
-                      1
-                    )
-                  })
-                : _vm._e(),
+                      })
+                    : _vm._e()
+                ],
+                2
+              ),
               _vm._v(" "),
               _c(
                 "v-list-tile",
@@ -91493,7 +91508,7 @@ var render = function() {
                 1
               )
             ],
-            2
+            1
           )
         ],
         1
@@ -96660,6 +96675,243 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 259 */,
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(261)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(263)
+/* template */
+var __vue_template__ = __webpack_require__(264)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\admin\\admin\\ListTeacher.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-44e668e3", Component.options)
+  } else {
+    hotAPI.reload("data-v-44e668e3", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 261 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(262);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("6c724f44", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44e668e3\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListTeacher.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-44e668e3\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ListTeacher.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 262 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 263 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+
+      headers: [{
+        text: '*',
+        align: 'center',
+        sortable: false,
+        name: 'id'
+      }, {
+        text: 'Name',
+        align: 'center',
+        sortable: false,
+        name: 'name'
+      }, {
+        text: 'Email',
+        align: 'center',
+        sortable: false,
+        name: 'email'
+      }, {
+        text: 'Skype',
+        align: 'center',
+        sortable: false,
+        name: 'spkype'
+      }],
+
+      items: [{
+        id: 1,
+        name: "Jonathan Duran",
+        email: "headjd@gmail.com",
+        skype: "SkyJD123456"
+      }]
+
+    };
+  }
+});
+
+/***/ }),
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-container",
+    { attrs: { "grid-list-xs": "" } },
+    [
+      _c(
+        "v-layout",
+        { attrs: { row: "", wrap: "" } },
+        [
+          _c(
+            "v-flex",
+            { attrs: { xs12: "" } },
+            [
+              _c(
+                "v-card",
+                { staticClass: "ma-4 elevation-5" },
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { dark: "", color: "primary" } },
+                    [
+                      _c("v-icon", [_vm._v("list")]),
+                      _vm._v(" "),
+                      _c("v-toolbar-title", [
+                        _vm._v("\n            List Teacher\n          ")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c("v-data-table", {
+                        staticClass: "elevation-1",
+                        attrs: {
+                          headers: _vm.headers,
+                          "hide-actions": "",
+                          items: _vm.items
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-44e668e3", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

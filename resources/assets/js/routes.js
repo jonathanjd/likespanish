@@ -9,6 +9,7 @@ import AdminTeacherHome from './components/admin/teacher/Home';
 import AdminDashboard from './components/admin/admin/Dashboard';
 import CreateStudent from './components/admin/admin/CreateStudent';
 import CreateTeacher from './components/admin/admin/CreateTeacher';
+import ListTeacher from './components/admin/admin/ListTeacher.vue';
 
 export const routes = [{
     path: '/',
@@ -49,6 +50,11 @@ export const routes = [{
         path: 'create-teacher',
         name: 'admin.create.teacher',
         component: CreateTeacher,
+      },
+      {
+        path: 'list-teacher',
+        name: 'admin.list.teacher',
+        component: ListTeacher,
       },
       {
         path: 'student',
