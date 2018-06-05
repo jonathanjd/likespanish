@@ -18,6 +18,8 @@ class UserTeacherController extends Controller
     public function index()
     {
         //
+        $userTeacher = User::has('teacher')->with('teacher')->get();
+        return response()->json($userTeacher, 200);
     }
 
     /**

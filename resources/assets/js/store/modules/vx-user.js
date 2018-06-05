@@ -56,6 +56,7 @@ const actions = {
           commit('setData', response.data);
           commit('setName', response.data.data.name);
           commit('setType', response.data.data.type);
+          resolve();
         } else {
           reject();
         }

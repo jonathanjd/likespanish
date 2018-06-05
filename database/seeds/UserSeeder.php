@@ -20,19 +20,5 @@ class UserSeeder extends Seeder
         $user->type = 'admin';
         $user->save();
 
-        $user = new User();
-        $user->name = 'Student';
-        $user->email = 'student@awesomecv.com';
-        $user->password = bcrypt('123456');
-        $user->type = 'student';
-        $user->save();
-
-        $user = new User();
-        $user->name = 'Teacher';
-        $user->email = 'teacher@awesomecv.com';
-        $user->password = bcrypt('123456');
-        $user->type = 'teacher';
-        $user->save();
-
     }
 }
