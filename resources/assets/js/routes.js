@@ -10,6 +10,8 @@ import AdminDashboard from './components/admin/admin/Dashboard';
 import CreateStudent from './components/admin/admin/CreateStudent';
 import CreateTeacher from './components/admin/admin/CreateTeacher';
 import ListTeacher from './components/admin/admin/ListTeacher.vue';
+import ShowTeacher from './components/admin/admin/ShowTeacher';
+import EditTeacher from './components/admin/admin/EditTeacher';
 
 export const routes = [{
     path: '/',
@@ -55,6 +57,16 @@ export const routes = [{
         path: 'list-teacher',
         name: 'admin.list.teacher',
         component: ListTeacher,
+      },
+      {
+        path: 'show-teacher/:id',
+        name: 'admin.show.teacher',
+        component: ShowTeacher,
+      },
+      {
+        path: 'edit-teacher/:id',
+        name: 'admin.edit.teacher',
+        component: EditTeacher,
       },
       {
         path: 'student',

@@ -48,7 +48,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar dark fixed app>
-      <v-toolbar-title>LikeSpanish</v-toolbar-title>
+      <v-toolbar-title>Awesome CV</v-toolbar-title>
     </v-toolbar>
     <v-snackbar
       :timeout="timeout"

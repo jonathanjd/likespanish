@@ -76,9 +76,11 @@ class UserTeacherController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
         //
+        $userTeacher = User::with('teacher')->find($id);
+        return response()->json($userTeacher, 200);
     }
 
     /**

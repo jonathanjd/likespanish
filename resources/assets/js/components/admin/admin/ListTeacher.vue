@@ -23,7 +23,7 @@
                 <td class="text-xs-center">{{ teacher.item.email }}</td>
                 <td class="text-xs-center">{{ teacher.item.teacher.skypeid }}</td>
                 <td class="justify-center layout px-0">
-                  <v-btn icon class="mx-0">
+                  <v-btn icon class="mx-0" @click="showTeacher(teacher.item.id)">
                     <v-icon color="info">info</v-icon>
                   </v-btn>
                   <v-btn icon class="mx-0">
@@ -101,6 +101,12 @@ export default {
   computed: {
     compuUserTeacher() {
       return this.$store.getters.getUserTeacher;
+    }
+  },
+
+  methods: {
+    showTeacher(id) {
+      this.$router.push({ name: 'admin.show.teacher', params: { id } });
     }
   }
 };
