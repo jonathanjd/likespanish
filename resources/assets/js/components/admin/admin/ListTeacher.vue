@@ -29,7 +29,7 @@
                   <v-btn icon class="mx-0">
                     <v-icon color="warning">edit</v-icon>
                   </v-btn>
-                  <v-btn icon class="mx-0">
+                  <v-btn icon class="mx-0" @click="openDialogoDelete(teacher.item.id, teacher.item.name)">
                     <v-icon color="error">delete</v-icon>
                   </v-btn>
                 </td>
@@ -47,14 +47,25 @@
         </v-card>
       </v-flex>
     </v-layout>
+    <app-dialogo-delete :myShowSnackBarDelete="showSnackBarDelete" :myListTeacher="listTeacher" :myDataTeacher="dataTeacher" :myDialogoDelete="dialogoDelete" @myDialogoDeleteWasChange="dialogoDelete = $event"></app-dialogo-delete>
+    <app-snack-bar :myText="snackbar.text" :myColor="snackbar.color" :mySnackBar="snackbar.active" @myActiveWasChange="snackbar.active = $event"></app-snack-bar>
   </v-container>
 </template>
 
 <script>
+import DialogoDelete from './include/DialogoDelete';
+import SnackBar from './include/SnackBar';
 export default {
   data() {
     return {
       loadingTeachers: false,
+      dialogoDelete: false,
+      dataTeacher: {},
+      snackbar: {
+        color: '',
+        active: false,
+        text: ''
+      },
       headers: [
         {
           text: '*',
@@ -91,11 +102,7 @@ export default {
   },
 
   created() {
-    this.loadingTeachers = true;
-    let token = localStorage.getItem('token');
-    this.$store.dispatch('loadUserTeacher', token).then(() => {
-      this.loadingTeachers = false;
-    });
+    this.listTeacher();
   },
 
   computed: {
@@ -105,9 +112,35 @@ export default {
   },
 
   methods: {
+    showSnackBarDelete() {
+      this.snackbar.color = 'error';
+      this.snackbar.active = true;
+      this.snackbar.text = 'Teacher Deleted';
+    },
+
+    listTeacher() {
+      this.loadingTeachers = true;
+      let token = localStorage.getItem('token');
+      this.$store.dispatch('loadUserTeacher', token).then(() => {
+        this.loadingTeachers = false;
+      });
+    },
+
     showTeacher(id) {
       this.$router.push({ name: 'admin.show.teacher', params: { id } });
+    },
+    openDialogoDelete(idTeacher, nameTeacher) {
+      this.dialogoDelete = true;
+      this.dataTeacher = {
+        id: idTeacher,
+        name: nameTeacher
+      };
     }
+  },
+
+  components: {
+    appDialogoDelete: DialogoDelete,
+    appSnackBar: SnackBar
   }
 };
 </script>
