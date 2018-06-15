@@ -8,4 +8,10 @@ class TypeClass extends Model
 {
     //
     protected $fillable = ['name'];
+
+    public function schedules()
+    {
+        return $this->hasMany('Schedule::class');
+    }
+
 }
