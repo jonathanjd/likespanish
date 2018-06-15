@@ -80,7 +80,8 @@ export default {
         { title: 'Dashboard', icon: 'dashboard', link: 'admin.dashboard' },
         { title: 'Create Student', icon: 'create', link: 'admin.create.student' },
         { title: 'Create Teacher', icon: 'create', link: 'admin.create.teacher' },
-        { title: 'List Teacher', icon: 'list', link: 'admin.list.teacher' }
+        { title: 'List Teacher', icon: 'list', link: 'admin.list.teacher' },
+        { title: 'Calendar Teacher', icon: 'calendar_today', link: 'schedule.teacher' }
       ]
     };
   },
